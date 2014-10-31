@@ -4,13 +4,13 @@ REST-API
 This is a REST API example using ASP.NET Web API
 
 Instructions:
-- You need Visual Studio to open this solution
-- Press F5 to run this API solution. You will see a welcome page will appear. This indicates the REST API has been started in your IIS express
+- Open this solution using Visual Studio
+- Press F5 to run, you will see a welcome page. This indicates the REST API has been started in your IIS express
 - Download Fiddler if you don't have already, this is an awesome tool (download it from http://www.telerik.com/fiddler)
 - Open Fiddler Composer > Scratchpad and paste below http request contents
 - Select any of the request and hit the 'Execute' button
 - On the left hand side you will the http traffic that you just made
-- Select that, go to Inspectors tab -> on the right hand side you will see two splitted windows. On the bottom one, select the JSON tab. Here we will see the response from the server
+- Select that traffic, go to 'Inspectors' tab. On the right hand side you will see two splitted windows. On the bottom one, select the JSON tab. Here we will see the response from the server
 
 GET
 --------------
