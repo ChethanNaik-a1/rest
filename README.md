@@ -12,6 +12,8 @@ Instructions:
 - On the left hand side you will the http traffic that you just made
 - Select that traffic, go to 'Inspectors' tab. On the right hand side you will see two splitted windows. On the bottom one, select the JSON tab. Here we will see the response from the server
 
+I tried to explain above steps using this video, hope this will help you https://www.youtube.com/watch?v=83afZKbng6k
+
 GET
 --------------
 
