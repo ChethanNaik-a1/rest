@@ -15,14 +15,16 @@ namespace SampleRESTApi.Controllers
         // this is in memory content, which we will play
         private static List<Employee> _employeeList = new List<Employee>()
         {
-            new Employee() {Id = 1, Name = "Pritam Karmakar", Role = "QA"},
-            new Employee() {Id = 2, Name = "Pinak Karmakar", Role = "Dev"},
-            new Employee() {Id = 3, Name = "Indrani Karmakar", Role = "Designer"}
+            new Employee() {Id = Guid.NewGuid(), Name = "Pritam Karmakar", Role = "QA"},
+            new Employee() {Id = Guid.NewGuid(), Name = "Pinak Karmakar", Role = "Dev"},
+            new Employee() {Id = Guid.NewGuid(), Name = "Indrani Karmakar", Role = "Designer"}
         };
 
         
-        // GET api/employee
-        // GET request to get all the employees
+        /// <summary>
+        /// API to get all the employees. api/employee
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Employee> Get()
         {
             //SetEmployee();
@@ -30,12 +32,16 @@ namespace SampleRESTApi.Controllers
         }
 
         // GET api/employee/5
-        // Get request to get details on a specific employee
-        public IEnumerable<Employee> Get(int id)
+        /// <summary>
+        /// API to get details of a specific employee. api/employee/c6003094-0beb-4b71-b2f4-c1394330b37c
+        /// </summary>
+        /// <param name="id">employee id (GUID)</param>
+        /// <returns></returns>
+        public Employee Get(Guid id)
         {
             if (_employeeList.Count > 0)
             {
-                return _employeeList.Where(e => e.Id == id);
+                return _employeeList.First(e => e.Id == id);
             }
             else
             {
@@ -43,8 +49,11 @@ namespace SampleRESTApi.Controllers
             }
         }
 
-        // POST api/employee
-        // POST request to add a new employee
+        /// <summary>
+        /// API to add a new employee. api/employee
+        /// </summary>
+        /// <param name="employee"></param>
+        /// <returns></returns>
         public HttpResponseMessage Post(Employee employee)
         {
             _employeeList.Add(employee);
@@ -55,9 +64,12 @@ namespace SampleRESTApi.Controllers
             return response;
         }
 
-        // DELETE api/employee/5
-        // DELETE operation to delete an existing employee by ID
-        public void Delete(int id)
+
+        /// <summary>
+        /// API to delete an existing employee by id. api/Employee/c6003094-0beb-4b71-b2f4-c1394330b37c
+        /// </summary>
+        /// <param name="id">employee id (GUID)</param>
+        public void Delete(Guid id)
         {
             _employeeList.RemoveAll(i => i.Id == id);
         }
