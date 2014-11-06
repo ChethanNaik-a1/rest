@@ -12,23 +12,13 @@ namespace SampleRESTApi.Controllers
 {
     public class EmployeeController : ApiController
     {
-        // this is in memory content, which we will play
-        private static List<Employee> _employeeList = new List<Employee>()
-        {
-            new Employee() {Id = Guid.NewGuid(), Name = "Pritam Karmakar", Role = "QA"},
-            new Employee() {Id = Guid.NewGuid(), Name = "Pinak Karmakar", Role = "Dev"},
-            new Employee() {Id = Guid.NewGuid(), Name = "Indrani Karmakar", Role = "Designer"}
-        };
-
-        
         /// <summary>
         /// API to get all the employees. api/employee
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Employee> Get()
+        public object Get()
         {
-            //SetEmployee();
-            return _employeeList;
+            return new { Content = Company.Employees };
         }
 
         // GET api/employee/5
@@ -39,9 +29,9 @@ namespace SampleRESTApi.Controllers
         /// <returns></returns>
         public Employee Get(Guid id)
         {
-            if (_employeeList.Count > 0)
+            if (Company.Employees.Count > 0)
             {
-                return _employeeList.First(e => e.Id == id);
+                return Company.Employees.FirstOrDefault(e => e.Id == id);
             }
             else
             {
@@ -56,7 +46,7 @@ namespace SampleRESTApi.Controllers
         /// <returns></returns>
         public HttpResponseMessage Post(Employee employee)
         {
-            _employeeList.Add(employee);
+            Company.Employees.Add(employee);
             var response = Request.CreateResponse<Employee>(HttpStatusCode.Created, employee);
 
             string uri = Url.Link("DefaultApi", new {id = employee.Id});
@@ -71,7 +61,7 @@ namespace SampleRESTApi.Controllers
         /// <param name="id">employee id (GUID)</param>
         public void Delete(Guid id)
         {
-            _employeeList.RemoveAll(i => i.Id == id);
+            Company.Employees.RemoveAll(i => i.Id == id);
         }
     }
 }
