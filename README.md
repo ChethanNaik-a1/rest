@@ -14,8 +14,7 @@ Instructions:
 
 I tried to explain above steps using this video, hope this will help you https://www.youtube.com/watch?v=83afZKbng6k
 
-GET
---------------
+####GET
 
 ```sh
 GET http://localhost:55570/api/employee HTTP/1.1
@@ -27,8 +26,7 @@ Accept-Encoding: gzip,deflate,sdch
 Accept-Language: en-GB,en-US;q=0.8,en;q=0.6
 ```
 
-POST
---------------
+####POST
 
 ```sh
 POST http://localhost:55570/api/employee HTTP/1.1
@@ -46,8 +44,7 @@ Accept-Language: en-GB,en-US;q=0.8,en;q=0.6
 {"Id":4,"Name":"Rishi Karmakar","Role":"Program Manager"}
 ```
 
-DELETE
---------------
+####DELETE
 
 ```sh
 DELETE http://localhost:55570/api/employee/1 HTTP/1.1
