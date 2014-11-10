@@ -9,7 +9,7 @@ Instructions:
 - Download Fiddler if you don't have already, this is an awesome tool (download it from http://www.telerik.com/fiddler)
 - Open Fiddler Composer > Scratchpad and paste below http request contents
 - Select any of the request and hit the 'Execute' button
-- On the left hand side you will the http traffic that you just made
+- On the left hand side you will see the http traffic that you just made
 - Select that traffic, go to 'Inspectors' tab. On the right hand side you will see two splitted windows. On the bottom one, select the JSON tab. Here we will see the response from the server
 
 I tried to explain above steps using this video, hope this will help you https://www.youtube.com/watch?v=83afZKbng6k
